@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./navbar.module.css";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 function Navbar() {
   return (
@@ -17,7 +17,17 @@ function Navbar() {
           <Link to="/add">Add</Link>
         </li>
         <li>
-          <Link to="/favourites">Favourites</Link>
+          {/* <Link to="/favourites">Favourites</Link> */}
+          <NavLink to="/favourites">
+            {({ isActive }) => {
+              console.log(isActive);
+              return (
+                <span className={isActive ? classes.activeclasse : null}>
+                  Favourites
+                </span>
+              );
+            }}
+          </NavLink>
         </li>
       </ul>
     </div>
