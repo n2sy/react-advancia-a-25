@@ -1,7 +1,7 @@
 import React from "react";
 
-function Searchbar() {
-  return <div>Searchbar</div>;
+function Searchbar(props) {
+  return <div>{props.children} </div>;
 }
 
 export default Searchbar;

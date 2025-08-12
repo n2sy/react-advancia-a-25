@@ -55,7 +55,9 @@ function AllBooks() {
   ];
   return (
     <>
-      <Searchbar></Searchbar>
+      <Searchbar>
+        <h1>Je suis la barre de recherche</h1>
+      </Searchbar>
       <BookList livres={MY_DATA} prenom="nidhal"></BookList>
     </>
   );
