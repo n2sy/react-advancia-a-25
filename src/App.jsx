@@ -15,7 +15,10 @@ function App() {
         <Route path="/" element={<Accueil></Accueil>}></Route>
         <Route path="/all" element={<AllBooks></AllBooks>}></Route>
         <Route path="/favourites" element={<Favourites></Favourites>}></Route>
-        <Route path="/films/:id" element={<BookDetails></BookDetails>}></Route>
+        <Route
+          path="/films/:filmId"
+          element={<BookDetails></BookDetails>}
+        ></Route>
         <Route path="/add" element={<AddBook></AddBook>}></Route>
       </Routes>
     </>
