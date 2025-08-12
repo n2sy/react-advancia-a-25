@@ -3,8 +3,8 @@ import "./BookItem.css";
 import Card from "./Card";
 function BookItem(props) {
   return (
-    <Card>
-      <div className="item col-md-4">
+    <div className="item col-md-4">
+      <Card>
         <div className="image">
           <img src={props.unLivre.image}></img>
         </div>
@@ -15,8 +15,8 @@ function BookItem(props) {
         <div className="actions">
           <button>Add to Favourites</button>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 }
 
