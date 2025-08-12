@@ -8,6 +8,13 @@ function Accueil() {
     { id: 2, prenom: "aziz" },
     { id: 3, prenom: "sahar" },
   ]);
+  let obj = {
+    prenom: "nidhal",
+    nom: "jelassi",
+    age: 42,
+  };
+
+  console.log("exemple", { ...obj });
 
   return (
     <>

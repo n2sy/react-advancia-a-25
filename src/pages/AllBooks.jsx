@@ -9,9 +9,14 @@ function AllBooks() {
     fetch("https://filmstore-409b9-default-rtdb.firebaseio.com/Films.json")
       .then((response) => response.json())
       .then((data) => {
+        let newTab = Object.keys(data).map((cle) => ({
+          id: cle,
+          ...data[cle],
+        }));
         console.log(data);
+        console.log(newTab);
 
-        setTabBooks(data);
+        setTabBooks(newTab);
       })
       .catch((err) => {
         console.log(err);
@@ -23,7 +28,7 @@ function AllBooks() {
       <Searchbar>
         <h1>Je suis la barre de recherche</h1>
       </Searchbar>
-      {/* <BookList livres={tabBooks} prenom="nidhal"></BookList> */}
+      <BookList livres={tabBooks}></BookList>
     </>
   );
 }
