@@ -56,7 +56,7 @@ function AllBooks() {
   return (
     <>
       <Searchbar></Searchbar>
-      <BookList livres={MY_DATA}></BookList>
+      <BookList livres={MY_DATA} prenom="nidhal"></BookList>
     </>
   );
 }

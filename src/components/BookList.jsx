@@ -1,17 +1,16 @@
 import React from "react";
 import "./BookList.css";
-function BookList() {
-  let tab = ["Livre 1", "Livre 2", "Livre 3", "Livre 4"];
+import BookItem from "./BookItem";
+function BookList(props) {
+  console.log(props);
 
   return (
-    <ol>
-      {tab.map((element) => {
-        return (
-          <li>
-            <h1>{element}</h1>
-          </li>
-        );
-      })}
+    <ol className="list">
+      <div className="row">
+        {props.livres.map((element) => {
+          return <BookItem unLivre={element}></BookItem>;
+        })}
+      </div>
     </ol>
   );
 }
