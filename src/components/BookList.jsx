@@ -8,7 +8,7 @@ function BookList(props) {
     <ol className="list">
       <div className="row">
         {props.livres.map((element) => {
-          return <BookItem unLivre={element}></BookItem>;
+          return <BookItem key={element.id} unLivre={element}></BookItem>;
         })}
       </div>
     </ol>

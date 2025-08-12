@@ -1,9 +1,14 @@
 import React from "react";
 import "./BookItem.css";
 import Card from "./Card";
+import { useNavigate } from "react-router";
 function BookItem(props) {
+  let navigate = useNavigate();
   return (
-    <div className="item col-md-4">
+    <div
+      onClick={() => navigate("/films/" + props.unLivre.id)}
+      className="item col-md-4"
+    >
       <Card>
         <div className="image">
           <img src={props.unLivre.image}></img>
