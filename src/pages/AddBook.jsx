@@ -1,7 +1,8 @@
 import React from "react";
+import BookFormV2 from "../components/BookFormV2";
 
 function AddBook() {
-  return <div>AddBook</div>;
+  return <BookFormV2></BookFormV2>;
 }
 
 export default AddBook;
