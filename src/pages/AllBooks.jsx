@@ -9,9 +9,22 @@ function AllBooks() {
     fetch("https://filmstore-409b9-default-rtdb.firebaseio.com/Films.json")
       .then((response) => response.json())
       .then((data) => {
+        // let tabHela = [];
+        // console.log("data", data);
+        // for (const key in data) {
+        //   console.log(key);
+        //   tabHela.push({ idHela: key, ...data[key] });
+        // }
+        // console.log("tabHela", tabHela);
+
         let newTab = Object.keys(data).map((cle) => ({
           id: cle,
           ...data[cle],
+          //   title: data[cle].title,
+          //   image: data[cle].image,
+          //   editor: data[cle].editor,
+          //   summary: data[cle].summary,
+          //   year: data[cle].year,
         }));
         console.log(data);
         console.log(newTab);
