@@ -29,6 +29,9 @@ function Navbar() {
             }}
           </NavLink>
         </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
       </ul>
     </div>
   );

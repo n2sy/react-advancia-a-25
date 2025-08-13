@@ -6,6 +6,7 @@ import Favourites from "./pages/Favourites";
 import AddBook from "./pages/AddBook";
 import Navbar from "./components/Navbar";
 import BookDetails from "./pages/BookDetails";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           element={<BookDetails></BookDetails>}
         ></Route>
         <Route path="/add" element={<AddBook></AddBook>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
       </Routes>
     </>
   );
