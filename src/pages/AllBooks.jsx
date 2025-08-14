@@ -38,9 +38,7 @@ function AllBooks() {
 
   return (
     <>
-      <Searchbar>
-        <h1>Je suis la barre de recherche</h1>
-      </Searchbar>
+      <Searchbar filtredBook={setTabBooks}></Searchbar>
       <BookList livres={tabBooks}></BookList>
     </>
   );

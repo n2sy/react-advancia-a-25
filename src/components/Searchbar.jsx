@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useRef } from "react";
 
-function Searchbar(props) {
+function Searchbar({ filtredBook }) {
   let year1 = useRef();
   let year2 = useRef();
   function searchHandler() {
@@ -15,6 +15,11 @@ function Searchbar(props) {
       })
       .then((response) => {
         console.log(response.data);
+        let tab = Object.keys(response.data).map((cle) => ({
+          id: cle,
+          ...response.data[cle],
+        }));
+        filtredBook(tab);
       })
       .catch((err) => {
         console.log(err);
