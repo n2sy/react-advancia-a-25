@@ -1,9 +1,25 @@
+import axios from "axios";
 import React, { useRef } from "react";
 
 function Searchbar(props) {
   let year1 = useRef();
   let year2 = useRef();
-  function searchHandler() {}
+  function searchHandler() {
+    axios
+      .get("https://filmstore-409b9-default-rtdb.firebaseio.com/Films.json", {
+        params: {
+          orderBy: '"year"',
+          startAt: Number(year1.current.value),
+          endAt: Number(year2.current.value),
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   return (
     <table className="table table-striped">
       <tbody>
