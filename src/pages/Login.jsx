@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./Login.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { LoginContext } from "../store/LoginContext";
 function Login() {
   const [showLogin, setShowLogin] = useState(false);
   const [formValue, setFormValue] = useState({
@@ -10,8 +11,7 @@ function Login() {
     username: "",
   });
   let navigate = useNavigate();
-  console.log("STATE", formValue);
-
+  let logCtx = useContext(LoginContext);
   function toggleShowLogin() {
     setShowLogin((previous) => !previous);
   }
@@ -29,6 +29,7 @@ function Login() {
               data[key].password == formValue.password
             ) {
               alert("Connected");
+              logCtx.seConnecter(data[key].role);
               navigate("/all");
               find = true;
             }
