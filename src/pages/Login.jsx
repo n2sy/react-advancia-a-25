@@ -30,7 +30,7 @@ function Login() {
             ) {
               alert("Connected");
               logCtx.seConnecter(data[key].role);
-              navigate("/all");
+              navigate("/");
               find = true;
             }
           }
