@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./navbar.module.css";
 import { Link, NavLink } from "react-router";
+import { FavouriteContext } from "../store/FavouritesContext";
 
 function Navbar() {
+  let favCtx = useContext(FavouriteContext);
   return (
     <div className={classes.header}>
       <div className={classes.logo}>Book Shop</div>
@@ -24,6 +26,9 @@ function Navbar() {
               return (
                 <span className={isActive ? classes.activeclasse : null}>
                   Favourites
+                  <span class="badge text-bg-secondary">
+                    {favCtx.nbFavourites}
+                  </span>
                 </span>
               );
             }}
